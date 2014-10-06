@@ -11,6 +11,8 @@ module.exports = function(config){
       'app/view*/**/*.js'
     ],
 
+    logLevel : config.LOG_DEBUG,
+
     autoWatch : true,
 
     frameworks: ['jasmine'],
