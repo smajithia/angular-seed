@@ -6,7 +6,8 @@ module.exports = function(grunt) {
                 configFile: "protractor.conf.js",
                 keepAlive: true,
                 noColor: false
-            }
+            },
+            run: {}
         },
         karma: {
             unit: {
@@ -26,6 +27,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-protractor-runner');
 
-    grunt.registerTask('devmode', ['karma:unit', 'watch'], 'protractor');
+    grunt.registerTask('devmode', ['karma:unit', 'watch']);
+    grunt.registerTask('test', [
+        'karma',
+        'protractor:run'
+    ]);
 
 };
